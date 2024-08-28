@@ -36,6 +36,9 @@ button {
   font-size: 40px;
   border-radius: 50%;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button:hover {
