@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./css/style.css">
+ 
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Rock Paper Scissors</h1>
+      <div class="game-box">
+        <button onclick="playGame('Rock')">
+          <i class="fa-regular fa-hand-back-fist"></i>
+        </button>
+        <button onclick="playGame('Paper')">
+          <i class="fa-regular fa-hand"></i>
+        </button>
+        <button onclick="playGame('Scissors')">
+          <i class="fa-regular fa-hand-scissors"></i>
+        </button>
+      </div>
+
+      <div id="animationBox" class="animation-box"></div>
+
+      <div id="result" class="result">
+        <div>
+          <p>You picked: <strong id="playerMove">-</strong></p>
+          <p>Computer picked: <strong id="computerMove">-</strong></p>
+        </div>
+        <p id="strong">
+          Result: <strong id="gameResult">Make your move!</strong>
+        </p>
+      </div>
+
+      <div id="scoreboard" class="scoreboard">
+        <p>Player Wins: <strong id="playerWins">0</strong></p>
+        <p>Computer Wins: <strong id="computerWins">0</strong></p>
+        <p>Ties: <strong id="ties">0</strong></p>
+      </div>
+
+      <button class="restart-button" onclick="restartGame()">
+        Restart Game
+      </button>
+    </div>
+  </body>
+  <script src="./js/main.js"></script>
+</html>

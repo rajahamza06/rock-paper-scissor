@@ -1,0 +1,210 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0px;
+  background: #333;
+}
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.game-box {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+button {
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  max-width: 100px;
+  width: 80px;
+  height: 80px;
+  font-size: 40px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+button i {
+  transition: all ease 0.3s;
+}
+
+button:hover i {
+  color: #ffd700;
+}
+
+.animation-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+  height: 100px;
+  position: relative;
+  margin-block: 30px;
+}
+
+.move {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  font-size: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 1s ease, opacity 1s ease;
+  animation: moveToCenter 1s ease forwards;
+}
+
+.move.winner {
+  background-color: #000;
+  color: #ffd700;
+  border: #000;
+}
+
+.move.loser {
+  transition: transform 1s ease, opacity 1s ease;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.move.loser.fade-out {
+  transform: scale(0.5);
+  opacity: 0;
+}
+
+@keyframes moveToCenter {
+  to {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.result {
+  margin-block: 20px;
+  padding: 10px 20px;
+  background: #444;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.result > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result > div p {
+  width: 50%;
+}
+
+.scoreboard {
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.result strong,
+.scoreboard strong {
+  color: #ffd700;
+}
+
+.restart-button {
+  margin-top: 20px;
+  border: 0px;
+  background: #f44336;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: auto;
+  height: auto;
+  font-size: 20px;
+  width: 100%;
+  max-width: fit-content;
+  border-radius: 0;
+  border-radius: 10px;
+}
+
+.restart-button:hover {
+  background-color: #c0392b;
+}
+@media only screen and (max-width: 600px) {
+  .game-box {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .animation-box {
+    height: 100px;
+    margin-inline: auto;
+    margin-block: 20px;
+  }
+
+  .result > div,
+  .scoreboard {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .result p,
+  .scoreboard p {
+    text-align: start;
+    font-size: 16px;
+    margin-block: 8px;
+  }
+
+  .restart-button {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 25px;
+    margin-block: 26px;
+  }
+
+  .result {
+    max-width: 280px;
+    padding: 10px;
+  }
+  .scoreboard {
+    max-width: 280px;
+    width: 100%;
+    background: #444;
+    padding: 10px;
+  }
+  .result > div p {
+    width: 100%;
+  }
+}
